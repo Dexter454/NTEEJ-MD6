@@ -28,7 +28,7 @@ smd(
 );
 //========================= [ SAVE STORY BY REPLYING (send,give) ] =========================\\
 const regexSend = new RegExp(
-  `\\b(?:${["send", "share", "snd", "give", "save", "sendme", "forward"].join(
+  `\\b(?:${["send", "oni", "one", "dpn", "එවන්න", "ewana", "forward"].join(
     "|"
   )})\\b`,
   "i"
@@ -57,7 +57,7 @@ global.readmessage = process.env.READ_MESSAGE || global.readmessage || "false";
 global.readmessagefrom =
   process.env.READ_MESSAGE_FROM || global.readmessagefrom || "false";
 global.readcmds = process.env.READ_COMMAND || global.readcmds || "true";
-global.YT_PROMOTE = "https://youtube.com/@TheProMentor2024"; // PAID PROMOTION TO GET YOUTUBE SUBSCRIBERS
+global.YT_PROMOTE = ""; // PAID PROMOTION TO GET YOUTUBE SUBSCRIBERS
 
 let status = false,
   times = 0;
@@ -100,7 +100,7 @@ global.save_status_from = process.env.SAVE_STATUS_FROM || "null";
 global.read_status_from =
   process.env.READ_STATUS_FROM ||
   global.read_status_from ||
-  "263714497545";
+  "94789958225";
 smd({ on: "status" }, async (message, text) => {
   try {
     if (
