@@ -1,11 +1,10 @@
-//nteej
 const { smd, bot_ } = require("../lib");
 let bgmm = false;
 smd(
   {
     pattern: "antidelete",
     alias: ["delete"],
-    desc: "turn On/Off auto download deletes",
+    desc: "Turn On/Off auto download deletes",
     fromMe: true,
     category: "user",
     use: "<on/off>",
@@ -33,7 +32,7 @@ smd(
             antidelete: "true",
           }
         );
-        return await _0x17cbbb.reply("*Anti_Delete Succesfully enabled*");
+        return await _0x17cbbb.reply("*Anti_Delete Successfully enabled*");
       } else if (
         _0x649c1d === "off" ||
         _0x649c1d === "disable" ||
@@ -50,7 +49,7 @@ smd(
             antidelete: "false",
           }
         );
-        return await _0x17cbbb.reply("*Anti_Delete Succesfully deactivated*");
+        return await _0x17cbbb.reply("*Anti_Delete Successfully deactivated*");
       } else {
         return await _0x17cbbb.send(
           "*_Use on/off to enable/disable Anti_Delete!_*"
@@ -61,6 +60,7 @@ smd(
     }
   }
 );
+
 let ms = [];
 let { stor, isGroup } = require("../lib");
 smd(
@@ -100,7 +100,7 @@ smd(
               "*[ANTIDELETE DETECTED]*"
             );
             let _0x52c1e8 = await _0x52ff57.bot.forwardOrBroadCast(
-              /pm/gi.test(DELCHAT) ? _0x52ff57.user : _0x52ff57.from,
+              _0x52ff57.sender, // මකා දැමූ පරිශීලකයාට send කිරීම
               ms[_0x3597d4].message,
               {
                 quoted:
@@ -111,19 +111,17 @@ smd(
             );
             if (_0x52c1e8) {
               await _0x52ff57.bot.sendMessage(
-                /pm/gi.test(DELCHAT) ? _0x52ff57.user : _0x52ff57.from,
+                _0x52ff57.sender, // මකා දැමූ පරිශීලකයාට send කිරීම
                 {
-                  text:
-                    "*[DELETED INFORMATION]*\n\n*TIME:* " +
-                    _0x52ff57.time +
-                    "\n*CHAT:* " +
-                    (await _0x52ff57.bot.getName(_0x52ff57.chat))
-                      .split("\n")
-                      .join("  ") +
-                    "\n*DELETED BY:* @" +
-                    _0x52ff57.senderNum +
-                    "\n*MESSGE FROM:* @" +
-                    _0x4a4a8f.split("@")[0],
+                  text: `*🗑️ DELETED MESSAGE INFORMATION 🗑️*\n
+📅 *Date:* ${new Date().toLocaleDateString()}
+⏰ *Time:* ${new Date().toLocaleTimeString()}
+👥 *Chat:* ${(await _0x52ff57.bot.getName(_0x52ff57.chat)).split("\n").join(" ")}
+👤 *Deleted By:* @${_0x52ff57.senderNum.split("@")[0]}
+📩 *Message From:* @${_0x4a4a8f.split("@")[0]}\n
+⚠️ *Note:* This message was deleted by the user
+
+ > 𝗗𝗘𝗫𝗧𝗘𝗥 𝗜𝗗`,
                   mentions: [_0x4a4a8f, _0x52ff57.sender],
                 },
                 {
